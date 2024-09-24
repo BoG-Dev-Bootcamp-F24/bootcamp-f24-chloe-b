@@ -39,7 +39,22 @@ function toLetterGrade(numGrade) {
  * Example: [9, 3, 4, 1, 2, 0] --> [4, 2, 0]
  */
 function getEvenElements(array) {
-  // TODO
+  var numEvens = 0; // counter for number of evens
+  for (var i = 0; i < array.length; i++) { // find number of evens
+    if (array[i] % 2 == 0) {
+      numEvens++;
+    }
+  }
+  
+  var evensArray = new Array(numEvens); // make new array
+  var index = 0; // keep track of index
+  for (var i = 0; i < array.length; i++) { // add the even elements to new array
+    if (array[i] % 2 == 0) {
+      evensArray[index] = array[i];
+      index++;
+    }
+  }
+  return evensArray; // return new array containing only even elements from the original array
 }
 
 /**
@@ -52,7 +67,14 @@ function getEvenElements(array) {
  * Example: "I love Bits of Good" --> 4
  */
 function findLongestWord(string) {
-  // TODO
+  var wordsArray = string.split(' '); // split sentence into an array of strings
+  var longestLength = 0; // keep track of the length of each word to find the longest one
+  for (var i = 0; i < wordsArray.length; i++) { // go through each element in the string array
+    if (wordsArray[i].length > longestLength) { // find the longest word in the string array
+      longestLength = wordsArray[i].length; // update the length of the longest word found
+    }
+  }
+  return longestLength; // return the length of the longest word
 }
 
 /**
